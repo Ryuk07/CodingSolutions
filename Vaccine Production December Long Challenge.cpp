@@ -70,22 +70,38 @@ using namespace std;
 
 int main(){
 
-    int d1, v1, d2, v2, p;
-    cin >> d1 >> v1 >> d2 >> v2 >> p;
-
-    if (d2 < d1) {
-        swap(d1, d2);
-        swap(v1, v2);
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	
+	int d1,v1,d2,v2,p,v,a=0,d=0,q=0;
+	cin>>d1>>v1>>d2>>v2>>p;
+	if (d1 == d2) {
+        q = 0;
+        d = d1 - 1;
+        while (q < p) {
+            q += v1 + v2;
+            d++;
+        }
+        cout << d << endl;
     }
+    else {
+        if (d2 < d1) {
+            swap(d1, d2);
+            swap(v1, v2);
+        }
 
-    int q = 0, d = d1 - 1;
-    while (q < p) {
-        if (d < d2 - 1) q += v1;
-        else q += v1 + v2;
-        d++;
+        q = 0;
+        d = d1 - 1;
+        while (q < p) {
+            if (d < d2-1) q += v1;
+            else q += v1 + v2;
+            d++;
+        }
+        cout << d << endl;
     }
-    cout << d << endl;
-    return 0;
+	return 0;
 }
 
 
