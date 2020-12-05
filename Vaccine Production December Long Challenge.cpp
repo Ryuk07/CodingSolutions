@@ -60,7 +60,7 @@ vaccines produced on the first day, 10 vaccines produced on each of days 2, 3 an
 
 
 
-Solution(Partially Submitted):
+Solution(Partially Submitted After Few Changes Only One Case Left):
 
 
 
@@ -68,13 +68,7 @@ Solution(Partially Submitted):
 using namespace std;	
 
 
-
 int main(){
-	#ifndef ONLINE_JUDGE
-	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
-	#endif
-
 	int d1,v1,d2,v2,p,v,a=0,d=0,q=0;
 	cin>>d1>>v1>>d2>>v2>>p;
 	if(d1==d2){
@@ -115,7 +109,7 @@ int main(){
 				q = a*v2;
 				d+=a;
 			}
-			while(q!=p){
+			while(q<p){
 				v = v1+v2;
 				q += v;
 				d++;
@@ -133,7 +127,7 @@ int main(){
 				q = a*v1;
 				d+=a;
 			}
-			while(q!=p){
+			while(q<p){
 				v = v1+v2;
 				q += v;
 				d++;
@@ -143,3 +137,4 @@ int main(){
 	}
 	return 0;
 }
+
