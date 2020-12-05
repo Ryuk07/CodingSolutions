@@ -60,7 +60,7 @@ vaccines produced on the first day, 10 vaccines produced on each of days 2, 3 an
 
 
 
-Solution(Partially Submitted After Few Changes Only One Case Left):
+Solution(Taken Help From Friend):
 
 
 
@@ -69,72 +69,24 @@ using namespace std;
 
 
 int main(){
-	int d1,v1,d2,v2,p,v,a=0,d=0,q=0;
-	cin>>d1>>v1>>d2>>v2>>p;
-	if(d1==d2){
-		if(d1==1&&d2==1){
-			v=v1+v2;
-			if(p%v!=0){
-				d = p/v;
-				cout<<d+1<<endl;
-			}
-			else{
-				d = p/v;
-				cout<<d<<endl;
-			}
-		}
-		else{
-			a = d1-1;
-			v=v1+v2;
-			if(p%v!=0){
-				d = p/v;
-				cout<<d+1+a<<endl;
-			}
-			else{
-				d = p/v;
-				cout<<d+a<<endl;
-			}
-		}
-	}
-	else{
-		if(d1>d2){
-			if(d2==1){
-				a = d1-d2;
-				q = a*v2;
-				d = a;
-			}
-			else{
-				d = d2-1;
-				a = d1-d2;
-				q = a*v2;
-				d+=a;
-			}
-			while(q<p){
-				v = v1+v2;
-				q += v;
-				d++;
-			}
-		}
-		else{
-			if(d1==1){
-				a = d2-d1;
-				q = a*v1;
-				d = a;
-			}
-			else{
-				d = d1-1;
-				a = d2-d1;
-				q = a*v1;
-				d+=a;
-			}
-			while(q<p){
-				v = v1+v2;
-				q += v;
-				d++;
-			}
-		}
-		cout<<d<<endl;
-	}
-	return 0;
+
+    int d1, v1, d2, v2, p;
+    cin >> d1 >> v1 >> d2 >> v2 >> p;
+
+    if (d2 < d1) {
+        swap(d1, d2);
+        swap(v1, v2);
+    }
+
+    int q = 0, d = d1 - 1;
+    while (q < p) {
+        if (d < d2 - 1) q += v1;
+        else q += v1 + v2;
+        d++;
+    }
+    cout << d << endl;
+    return 0;
 }
+
+
 
