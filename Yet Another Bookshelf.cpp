@@ -26,6 +26,7 @@ there are also no gaps between books.
 You have to answer t
 
 independent test cases.
+
 Input
 
 The first line of the input contains one integer t
@@ -41,8 +42,9 @@ Output
 
 For each test case, print one integer: the minimum number of moves required to collect all the books on the shelf as a contiguous (consecutive) segment (i.e. the segment without gaps).
 Example
+
 Input
-Copy
+
 
 5
 7
