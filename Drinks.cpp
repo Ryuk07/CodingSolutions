@@ -38,7 +38,7 @@ Note to the first sample: let's assume that Vasya takes x milliliters of each dr
 
 
 
-Solution:
+Solution1:
 
 
 #include <bits/stdc++.h>
@@ -62,3 +62,23 @@ int main(){
 	return 0;
 }
 
+
+
+solution2:
+
+
+    #include <iostream>
+    using namespace std;
+     
+    int main() {
+    	int n;
+    	cin>>n;
+    	int k = 0;
+    	for (int i = 1; i <= n; i++){
+    		int m;
+    		cin>>m;
+    		k += m;
+    	}
+    	cout<<((k * 1.0) / (n * 1.0));
+    	return 0;
+    }
