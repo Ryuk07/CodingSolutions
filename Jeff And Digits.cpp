@@ -78,3 +78,62 @@ int main(){
     return 0;
 }
 
+
+
+Solution(2):
+
+
+
+#include <bits/stdc++.h>
+using namespace std;	
+
+
+int main(){
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	
+    
+    long long n,cntz=0,cntf=0,x=0,a,sum=0;
+    cin>>n;
+    for(long long i=0;i<n;i++){
+    	cin>>a;
+    	if(a==0){
+    		cntz++;
+    	}
+    	else{
+    		sum+=a;
+    		cntf++;
+    	}
+    }
+    if(cntz==0){
+    	cout<<-1<<endl;
+    }
+    else{
+    	for(int i=0;i<cntf;i++){
+    		if(sum%9!=0){
+    			sum-=5;
+    			x++;
+    		}
+    		else{
+    			break;
+    		}
+    	}
+    	if(sum==0){
+    		cout<<0<<endl;
+    	}
+    	else{
+    		for(int i=0;i<(cntf-x);i++){
+    			cout<<5;
+    		}
+    		for(int i=0;i<cntz;i++){
+    			cout<<0;
+    		}
+    		cout<<endl;
+    	}
+    }
+    return 0;
+}
+
