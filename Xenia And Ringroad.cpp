@@ -84,3 +84,37 @@ int main(){
     return 0;
 }
 
+
+
+
+Solution(Optimized):
+
+
+#include <bits/stdc++.h>
+using namespace std;	
+
+
+int main(){
+
+	#ifndef ONLINE_JUDGE
+	freopen("input.txt", "r", stdin);
+	freopen("output.txt", "w", stdout);
+	#endif
+	
+    
+    long long n,m,a,sum=0,b=1;
+    cin>>n>>m;
+    for(int i=0;i<m;i++){
+    	cin>>a;
+    	if(a<b){
+    		sum+=((n-b)+a);
+    	}
+    	else{
+    		sum+=(a-b);
+    	}
+    	b=a;
+    }
+    cout<<sum<<endl;   
+    return 0;
+}
+
