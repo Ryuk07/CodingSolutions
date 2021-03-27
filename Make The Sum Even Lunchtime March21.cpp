@@ -81,7 +81,6 @@ Example case 4: It is impossible to make the sum of the sequence even.
 Solution(Partial Submission):
 
 
-
 #include <bits/stdc++.h>
 using namespace std;	
 
@@ -123,3 +122,34 @@ int main(){
 
 }
 
+
+
+
+
+Solution(Full Solution):
+
+
+
+#include<iostream>
+using namespace std;
+int main(){
+     ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        long long int arr[n];
+        long long int sum=0;
+        int two=0;
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+            sum=sum+arr[i];
+            if(arr[i]==2) two++;
+        }
+        if(sum%2==0) cout<<0<<"\n";
+        else if(two>0) cout<<1<<"\n";
+        else cout<<-1<<"\n";
+        }
+    }
